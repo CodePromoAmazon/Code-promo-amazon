@@ -32,7 +32,7 @@ export default function Home() {
         </p>
         <p className="description">
           Des coupons codes Amazon
-    <p>
+        </p>
       
     
       </main>
