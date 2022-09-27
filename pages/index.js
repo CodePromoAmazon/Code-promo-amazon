@@ -1,9 +1,4 @@
 import Link from 'next/link';
-import { getPosts } from '../utils/mdx-utils';
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
-
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Layout, { GradientBackground } from '../components/Layout';
