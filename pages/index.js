@@ -1,106 +1,48 @@
-import Link from 'next/link';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Layout, {
-    GradientBackground
-} from '../components/Layout';
-import ArrowIcon from '../components/ArrowIcon';
-import {
-    getGlobalData
-} from '../utils/global-data';
-import SEO from '../components/SEO';
+import Head from 'next/head'
+import Header from '@components/Header'
+import Footer from '@components/Footer'
 
-export default function Index({
-    posts,
-    globalData
-}) {
+export default function Home() {
+  return (
+    <div className="container">
+      <Head>
+        <title>💙 LETS GROW !</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-    export default function Home() {
-        return ( <
-            div className =
-            "container" >
-            <
-            Head >
-            <
-            title > Code Promo Amazon!
-            <
-            /title> <
-            link rel = "icon"
-            href = "/favicon.ico" /
-            >
-            <
-            /Head>
+      <main>
+        <Header title="Welcome to LETS GROW!" />
+        <p className="description">
+          Lets GROW est la référence des ressources : bonnes pratiques dans le domaine du Growth Hacking et de l&apos;entrepreneuriat au sens large.
+        </p>
+        <p className="description">
+          Nous aidons gratuitement les entrepreneurs, growth hackers et commerciaux pour obtenir tout le nécessaire pour booster leur croissance.
+        </p>
+         <p className="description">
+          Qu&apos;il s&apos;agisse de novices ou de profils chevronnés, nous alimentons chaque jour une base de :
+         </p>
+       
+        <p className="description">Des centaines de <a href="https://sales-hacking.com/growth-hacks" target="_blank">growth hacks</a> enrichis CHAQUE JOUR</p>
+        <p className="description">Près de 100 <a href="https://www.sales-hacking.com/growth-ressources">ressources pour entrepreneurs</a> téléchargeables</p>
+        <p className="description">
+          100 articles de blog autour du <a href="https://www.sales-hacking.com/blog-categories/growth-hacking">growth hacking</a>, de <a href="https://www.sales-hacking.com/blog-categories/seo-content-marketing">content marketing</a>, de techniques pour les Sales, du <a href="https://www.sales-hacking.com/blog-categories/web-scraping">Web scraping</a>, de Lead Generation et de l&apos;entrepreneuriat en général,
+        </p>
+        <p className="description">
+          Des conseils de lecture avec <a href="https://www.sales-hacking.com/livres">le meilleur des livres business</a>
+        </p>
+        <p className="description">
+          Des applications SaaS
+        </p>
+    
+        <a href="https://twitter.com/StephenMesnild1?ref_src=twsrc%5Etfw" 
+          class="twitter-follow-button" 
+          data-show-count="false">Follow @StephenMesnild1
+        </a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
+      </main>
 
-            <
-            main >
-            <
-            Header title =
-            "Bienvenu sur le site des codes promos Amazon!" /
-            >
-            <
-            p className =
-            "description" >
-            Les - Codes - Promos.com est la référence des ressources:
-            tous les codes promos Amazon valident pour Bénéficier de réduction sur son panier <
-            /p> <
-            p className =
-            "description" >
-            Nous fournissons des codes promos Amazon pour faire bénéficier de réductions importantes les clients Amazon
-            . <
-            /p> <
-            p className =
-            "description" >
-            La solution pour faire de grandes économies quand on achète sur Amazon <
-            /p>
-
-            <
-            p className =
-            "description" > Codes promo Amazon 2022 <
-            a href =
-            "https://www.les-codes-promos.com/code-promo-amazon/" >
-            growth hacks <
-            /a> code promo 5€ Amazon</p >
-            <
-            p className =
-            "description" > Près de 100 <
-            a href =
-            "https://www.les-codes-promos.com/code-promo-amazon/" >
-            codes promotionnels <
-            /a> codes promotionnels </p >
-            <
-            p className =
-            "description" >
-            Toutes les réductions et promotions <
-            a href =
-            "https://www.les-codes-promos.com/code-promo-amazon/" >
-            Promos Flash <
-            /a>, de <a href="https:/ /
-            www.les - codes -
-            promos.com / code -
-            promo - amazon ">Prime day</a>, Livraison en Point retrait <a href="
-            https: //www.les-codes-promos.com/code-promo-amazon">Livraison Gratuite</a>, Soldes Amazon
-            <
-            /p> <
-            p className =
-            "description" >
-            Des codes de réduction 5€ 10€ 25€ <
-            a href =
-            "https://www.les-codes-promos.com/" >
-            Des codes qui fonctionnent <
-            /a> < /
-            p > <
-            p className =
-            "description" >
-            Des coupons codes Amazon <
-            /p>
-
-
-            <
-            /main>
-
-            <
-            Footer / >
-            <
-            /div>
-        )
-    }
+      <Footer />
+    </div>
+  )
+}
