@@ -1,67 +1,42 @@
-import Link from 'next/link';
-import { getPosts } from '../utils/mdx-utils';
+import Head from 'next/head'
+import Header from '@components/Header'
+import Footer from '@components/Footer'
 
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Layout, { GradientBackground } from '../components/Layout';
-import ArrowIcon from '../components/ArrowIcon';
-import { getGlobalData } from '../utils/global-data';
-import SEO from '../components/SEO';
-
-export default function Index({ posts, globalData }) {
+export default function Home() {
   return (
-    <Layout>
-      <SEO title={globalData.name} description={globalData.blogTitle} />
-      <Header name={globalData.name} />
-      <main className="w-full">
-        <h1 className="text-3xl lg:text-5xl text-center mb-12">
-          {globalData.blogTitle}
-        </h1>
-        <ul className="w-full">
-          {posts.map((post) => (
-            <li
-              key={post.filePath}
-              className="md:first:rounded-t-lg md:last:rounded-b-lg backdrop-blur-lg bg-white dark:bg-black dark:bg-opacity-30 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 border-b-0 last:border-b hover:border-b hovered-sibling:border-t-0"
-            >
-              <Link
-                as={`/posts/${post.filePath.replace(/\.mdx?$/, '')}`}
-                href={`/posts/[slug]`}
-              >
-                <a className="py-6 lg:py-10 px-6 lg:px-16 block focus:outline-none focus:ring-4">
-                  {post.data.date && (
-                    <p className="uppercase mb-3 font-bold opacity-60">
-                      {post.data.date}
-                    </p>
-                  )}
-                  <h2 className="text-2xl md:text-3xl">{post.data.title}</h2>
-                  {post.data.description && (
-                    <p className="mt-3 text-lg opacity-60">
-                      {post.data.description}
-                    </p>
-                  )}
-                  <ArrowIcon className="mt-4" />
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+    <div className="container">
+      <Head>
+        <title>Code Promo Amazon !</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main>
+        <Header title="Bienvenu sur le site des codes promos Amazon!" />
+        <p className="description">
+          Les-Codes-Promos.com est la référence des ressources : tous les codes promos Amazon valident pour Bénéficier de réduction sur son panier
+        </p>
+        <p className="description">
+          Nous fournissons des codes promos Amazon pour faire bénéficier de réductions importantes les clients Amazon.
+        </p>
+         <p className="description">
+          La solution pour faire de grandes économies quand on achète sur Amazon
+         </p>
+       
+        <p className="description">Des centaines de <a href="https://www.les-codes-promos.com/code-promo-amazon/" target="_blank">growth hacks</a> enrichis CHAQUE JOUR</p>
+        <p className="description">Près de 100 <a href="https://www.les-codes-promos.com/code-promo-amazon/">ressources pour entrepreneurs</a> téléchargeables</p>
+        <p className="description">
+          Toutes les réductions et promotions <a href="https://www.les-codes-promos.com/code-promo-amazon/">Promos Flash</a>, de <a href="https://www.les-codes-promos.com/code-promo-amazon">Prime day</a>, Livraison en Point retrait <a href="https://www.les-codes-promos.com/code-promo-amazon">Livraison Gratuite</a>, Soldes Amazon
+        </p>
+        <p className="description">
+          Des codes de réduction 5€ 10€ 25€ <a href="https://www.les-codes-promos.com/">Des codes qui fonctionnent</a>
+        </p>
+        <p className="description">
+          Des coupons codes Amazon
+      
+    
       </main>
-      <Footer copyrightText={globalData.footerText} />
-      <GradientBackground
-        variant="large"
-        className="fixed top-20 opacity-40 dark:opacity-60"
-      />
-      <GradientBackground
-        variant="small"
-        className="absolute bottom-0 opacity-20 dark:opacity-10"
-      />
-    </Layout>
-  );
-}
 
-export function getStaticProps() {
-  const posts = getPosts();
-  const globalData = getGlobalData();
-
-  return { props: { posts, globalData } };
+      <Footer />
+    </div>
+  )
 }
